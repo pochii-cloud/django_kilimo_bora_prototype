@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedbacks</title>
+</head>
+<body>
+{% block content %}
+ <table class="table table-bordered mt-5">
+ <h2 class="text-center text-decoration-underline">latest asked questions with answers</h2>
+   <thead>
+   <td class="fw-bold">SN</td>
+   <td class="fw-bold">TITLE</td>
+   <td class="fw-bold">ACTION</td>
+   </thead>
+        {% for query in query %}
+              <tr class="table-secondary">
+
+              <td><h4>{{ forloop.counter }}</h4></td>
+                  <td class="striker"><h4> {{ query.title }}</h4> </td>
+                  <td><centre><a class="btn btn-success" href="{% url 'ResponseView' query.pk %}" type="button"> response</a></centre></td>
+              </tr>
+           {% endfor %}
+     </table>
+{% endblock %}
+</body>
+</html>

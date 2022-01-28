@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>response</title>
+</head>
+<body>
+{% block content %}
+    <div class="container">
+<div class="card">
+  <div class="card-header">
+    <h3><b>QUESTION::</b>{{ query.title }}</h3>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><b>ANSWER::</b>{{ query.response}}</p>
+      <footer class="blockquote-footer"> asked by::<b>{{ query.username}}</b></footer>
+    </blockquote>
+  </div>
+</div>
+    </div>
+<style>
+.card{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+</style>
+{% endblock %}
+</body>
+</html>

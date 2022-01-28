@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact us</title>
+</head>
+<body>
+{% block content %}
+
+    <div class="form-group" style="justify-content: center;align-items: center;display: flex;">
+     <form method="post" style="border: 2px solid green;padding: 30px;margin-top: 40px;">
+     <h2 class="text-center text-black text-decoration-underline">type your question below</h2>
+      {% csrf_token %}
+         {% for field in form%}
+             <label>{{ field.label_tag }}</label>
+             {{ field}}
+         {% endfor %}
+         <button class="btn btn-success m-2" type="submit">submit </button>
+     </form>
+    </div>
+{% endblock %}
+</body>
+</html>
